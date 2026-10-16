@@ -5,6 +5,8 @@ import {
   CheckCircle2, Clock,
 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import { db } from '@/lib/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { CONTACT, SERVICE_OPTIONS, PROJECT_TYPES, sendEmailNotification } from '@/lib/contact';
 import { toast } from '@/components/Toast';
 
@@ -67,6 +69,21 @@ export default function Contact() {
 
       if (dbError) {
         throw new Error('Database submission failed');
+      }
+
+      // Save to Firebase Firestore
+      try {
+        await addDoc(collection(db, 'contact_messages'), {
+          full_name: form.full_name,
+          email: form.email,
+          phone: form.phone,
+          service_required: form.service_required || null,
+          project_type: form.project_type || null,
+          message: form.message,
+          created_at: serverTimestamp(),
+        });
+      } catch {
+        // Firestore failed but Supabase saved — still show success to user
       }
 
       // Send email via Web3Forms
