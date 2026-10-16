@@ -1,4 +1,4 @@
-import { Cpu, MapPin, Mail, Phone, MessageCircle, ArrowUpRight } from 'lucide-react';
+import { MapPin, Mail, Phone, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { CONTACT } from '@/lib/contact';
 
 const serviceLinks = [
@@ -27,9 +27,7 @@ export default function Footer() {
           {/* Brand Summary */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-indigo-500 flex items-center justify-center glow-sm">
-                <Cpu className="w-5 h-5 text-navy-900" strokeWidth={2.5} />
-              </div>
+              <img src="/logo.png" alt="KP Technologies" className="h-9 w-auto object-contain" />
               <div className="flex flex-col leading-none">
                 <span className="font-display font-bold text-white text-base">KP Technologies</span>
                 <span className="text-[10px] text-cyan-400/80 font-medium tracking-wide uppercase">by KP Industries</span>

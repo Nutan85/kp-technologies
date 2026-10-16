@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Cpu, ArrowRight, Phone } from 'lucide-react';
+import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import { CONTACT } from '@/lib/contact';
 
 const navLinks = [
@@ -37,9 +37,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3 group flex-shrink-0">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-indigo-500 flex items-center justify-center glow-sm group-hover:glow-cyan transition-all duration-300">
-              <Cpu className="w-5 h-5 text-navy-900" strokeWidth={2.5} />
-            </div>
+            <img src="/logo.png" alt="KP Technologies" className="h-9 w-auto object-contain" />
             <div className="flex flex-col leading-none">
               <span className="font-display font-bold text-white text-base lg:text-lg tracking-tight">
                 KP Technologies
