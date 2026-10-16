@@ -36,8 +36,14 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3.5 group flex-shrink-0">
-            <img src="/logo.png" alt="KP Technologies" className="h-14 w-auto object-contain flex-shrink-0" />
+          <a href="#home" className="flex items-center gap-3 group flex-shrink-0">
+            <div className="relative h-14 w-14 flex items-center justify-center overflow-hidden flex-shrink-0 rounded-xl">
+              <img
+                src="/logo.png"
+                alt="KP Technologies"
+                className="w-full h-full object-cover scale-[2.2] transform"
+              />
+            </div>
             <div className="flex flex-col leading-none">
               <span className="font-display font-bold text-white text-base lg:text-lg tracking-tight">
                 KP Technologies
