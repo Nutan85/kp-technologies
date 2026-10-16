@@ -27,7 +27,7 @@ export default function FloatingDock() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 50, scale: 0.8 }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3"
         >
           <AnimatePresence>
             {expanded && (
@@ -43,6 +43,7 @@ export default function FloatingDock() {
                     href={action.href}
                     target={action.external ? '_blank' : undefined}
                     rel={action.external ? 'noopener noreferrer' : undefined}
+                    aria-label={action.label === 'WhatsApp' ? `Chat on WhatsApp with KP Technologies at ${CONTACT.phone}` : action.label === 'Call Now' ? `Call KP Technologies at ${CONTACT.phone}` : `Email KP Technologies at ${CONTACT.email}`}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 20 }}
@@ -59,8 +60,9 @@ export default function FloatingDock() {
 
           <button
             onClick={() => setExpanded(!expanded)}
-            className="relative w-14 h-14 rounded-full bg-gradient-to-br from-cyan-500 to-indigo-500 flex items-center justify-center glow-cyan hover:glow-cyan-strong transition-all duration-300"
-            aria-label="Quick contact"
+            className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-cyan-500 to-indigo-500 flex items-center justify-center glow-cyan hover:glow-cyan-strong transition-all duration-300"
+            aria-label={expanded ? 'Close quick contact menu' : 'Open quick contact menu'}
+            aria-expanded={expanded}
           >
             <AnimatePresence mode="wait">
               {expanded ? (

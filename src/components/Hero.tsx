@@ -45,9 +45,7 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-cyan-400/20 text-sm font-medium">
             <Rocket className="w-4 h-4 text-cyan-400" fill="currentColor" />
-            <span className="text-slate-200">Tech Venture by KP Industries</span>
-            <span className="text-cyan-400/60">|</span>
-            <span className="text-gradient-cyan font-semibold">Pune's Premier Tech Partner</span>
+            <span className="text-slate-200">An Initiative by KP Industries</span>
           </div>
         </motion.div>
 
@@ -83,6 +81,7 @@ export default function Hero() {
         >
           <a
             href="#services"
+            aria-label="Explore our services"
             className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500 text-white font-semibold text-base hover:from-cyan-400 hover:to-indigo-400 transition-all duration-300 glow-sm hover:glow-cyan-strong"
           >
             Explore Services
@@ -90,6 +89,7 @@ export default function Hero() {
           </a>
           <a
             href="#sponsorship"
+            aria-label="Apply for tech sponsorship"
             className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full glass border-white/15 text-white font-semibold text-base hover:border-cyan-400/50 hover:bg-cyan-400/5 transition-all duration-300"
           >
             <Rocket className="w-5 h-5 text-cyan-400" />

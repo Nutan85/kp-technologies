@@ -83,8 +83,6 @@ export default function About() {
               <span className="font-display font-bold text-white">KP Technologies</span>
               {' — '}
               <span className="text-cyan-400">by KP Industries</span>
-              {' · '}
-              Pune's Premier Tech Partner
             </span>
           </div>
         </motion.div>

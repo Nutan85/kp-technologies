@@ -129,6 +129,7 @@ export default function Contact() {
             {/* Phone */}
             <a
               href={CONTACT.phoneHref}
+              aria-label={`Call KP Technologies at ${CONTACT.phone}`}
               className="glass-card rounded-2xl p-5 flex items-center gap-4 hover:border-cyan-400/30 transition-all duration-300 group"
             >
               <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -145,6 +146,7 @@ export default function Contact() {
               href={CONTACT.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Chat on WhatsApp with KP Technologies at ${CONTACT.phone}`}
               className="glass-card rounded-2xl p-5 flex items-center gap-4 hover:border-green-400/30 transition-all duration-300 group"
             >
               <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-green-500/10 border border-green-400/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">

@@ -51,7 +51,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-0.5">
+          <nav className="hidden md:flex items-center gap-0.5" aria-label="Main navigation">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -62,12 +62,13 @@ export default function Navbar() {
                 <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-cyan-400 group-hover:w-3/4 group-hover:left-1/4 transition-all duration-300" />
               </a>
             ))}
-          </div>
+          </nav>
 
           {/* CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3">
             <a
               href={CONTACT.phoneHref}
+              aria-label={`Call KP Technologies at ${CONTACT.phone}`}
               className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full glass border-cyan-400/20 text-sm font-medium text-slate-200 hover:border-cyan-400/40 hover:text-cyan-400 transition-all duration-300"
             >
               <Phone className="w-3.5 h-3.5" />
@@ -75,6 +76,7 @@ export default function Navbar() {
             </a>
             <a
               href="#contact"
+              aria-label="Get a free consultation"
               className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500 text-white font-semibold text-sm hover:from-cyan-400 hover:to-indigo-400 transition-all duration-300 glow-sm hover:glow-cyan"
             >
               Get Free Consultation
@@ -85,8 +87,9 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-white p-2 flex-shrink-0"
-            aria-label="Toggle menu"
+            className="md:hidden text-white p-2 flex-shrink-0"
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -101,11 +104,11 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 bottom-0 w-72 bg-navy-900/95 backdrop-blur-xl border-l border-white/8 z-50 lg:hidden flex flex-col"
+            className="fixed top-0 right-0 bottom-0 w-72 max-w-[85vw] bg-navy-900/95 backdrop-blur-xl border-l border-white/8 z-50 md:hidden flex flex-col"
           >
             <div className="flex items-center justify-between p-6 border-b border-white/8">
               <span className="font-display font-bold text-white">Menu</span>
-              <button onClick={() => setMobileOpen(false)} className="text-white p-1">
+              <button onClick={() => setMobileOpen(false)} className="text-white p-1" aria-label="Close menu">
                 <X className="w-6 h-6" />
               </button>
             </div>
@@ -122,6 +125,7 @@ export default function Navbar() {
               ))}
               <a
                 href={CONTACT.phoneHref}
+                aria-label={`Call KP Technologies at ${CONTACT.phone}`}
                 className="mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full glass border-cyan-400/20 text-slate-200 font-medium text-sm"
               >
                 <Phone className="w-4 h-4 text-cyan-400" />
