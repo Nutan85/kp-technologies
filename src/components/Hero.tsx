@@ -58,11 +58,9 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-center leading-[1.1] tracking-tight mb-6"
         >
-          <span className="text-gradient-white">Next-Gen Software, Web &amp;</span>
+          <span className="text-gradient-white">Building Scalable Software.</span>
           <br />
-          <span className="text-gradient-mix">Mobile App Development</span>
-          <br />
-          <span className="text-gradient-white">with Strategic Tech Sponsorships</span>
+          <span className="text-gradient-mix">Sponsoring Big Ideas.</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -72,8 +70,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-center text-slate-400 text-lg lg:text-xl max-w-3xl mx-auto mb-10 leading-relaxed"
         >
-          We craft scalable websites, high-performance mobile apps, and custom software.
-          Got a breakthrough startup idea? We provide technical dev sponsorships.
+          Web, Mobile &amp; Enterprise Solutions by KP Technologies — Empowering businesses
+          and sponsoring breakthrough ideas with engineering excellence.
         </motion.p>
 
         {/* CTAs */}
